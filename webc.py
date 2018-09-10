@@ -27,7 +27,7 @@ def append_to_file(path, data):
 
 
 #delete the content of the file:
-def delete_file_content():
+def delete_file_content(path):
 	with open(path, "w"):
 		pass  # just do nothin
 
