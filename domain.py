@@ -7,7 +7,7 @@ def get_domain_name(url):
 		results = get_sub_domain_name(url).split(".")
 		return results[-2] + "." + results[-1]
 	except Exception as e:
-		raise ""
+		return ""
 
 
 
