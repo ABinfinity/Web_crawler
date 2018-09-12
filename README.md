@@ -1,4 +1,4 @@
 # Web_crawler
-A simple web crawler tutorial.
+A simple web crawler program which crawls through all the links in a webpage.
 
-Credits: Bucky Roberts
+Credit:Bucky
