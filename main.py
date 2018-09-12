@@ -6,7 +6,7 @@ from webc import *
 
 
 PROJECT_NAME = "thenewboston" # python convention for declaring constant (all capitals)
-HOMEPAGE = "https://thenewboston.com/"
+HOMEPAGE = "http://www.harshilsrivastava.ml/"
 DOMAIN_NAME = get_domain_name(HOMEPAGE)
 
 QUEUE_FILE = PROJECT_NAME + "/queue.txt"

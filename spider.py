@@ -50,7 +50,7 @@ class Spider:
 		html_string = ""
 		try:
 			response = urlopen(page_url)
-			if response.getheader("Content-Type") == "text/html":
+			if "text/html" in response.getheader("Content-Type"):
 				html_bytes = response.read()
 				html_string = html_bytes.decode("utf-8")
 			finder = LinkFinder(Spider.base_url, page_url)
@@ -65,11 +65,9 @@ class Spider:
 	@staticmethod
 	def add_links_to_queue(links):
 		for url in links:
-			if url in Spider.queue:
+			if (url in Spider.queue) or (url in Spider.crawled):
 				continue
-			if url in Spider.crawled:
-				continue
-			if Spider.domain_name not in url:
+			if Spider.domain_name != get_domain_name(url):
 				continue
 			Spider.queue.add(url)
 
@@ -79,7 +77,4 @@ class Spider:
 		set_to_file(Spider.crawled, Spider.crawled_file)
 		
 
-
-
-
-
+		
